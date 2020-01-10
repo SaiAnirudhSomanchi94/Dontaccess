@@ -139,7 +139,7 @@ def Connectivity(J_USERNAME, J_PASSWORD, ip, JumpServer, Interface, DeviceType, 
                     print('skip')
             response_content, decision = Volume_Utilization_Check(str(result[0]), str(result[1]))
     except Exception as e:
-        response_content = str('Issue in Device Connectivity')+ str(e) + str(len(JumpServer))
+        response_content = str('Issue in Device Connectivity')+ str(e) +str(PROJECT_PATH)+ str(len(JumpServer))
         # print(e)
         decision = 0
     return response_content, int(decision)
