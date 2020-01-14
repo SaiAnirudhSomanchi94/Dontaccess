@@ -1,0 +1,11 @@
+---
+# defaults file for f5_Device_Info_collect
+item:
+  - show sys version
+  - run /util bash -c uptime
+  - show /sys hardware
+  - show /sys tmm-info
+  - run /util bash -c df -h
+  - show /ltm virtual all-properties
+  - show /ltm pool all-properties
+  - show /ltm node all-properties

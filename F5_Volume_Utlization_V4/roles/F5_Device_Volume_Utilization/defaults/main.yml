@@ -1,0 +1,4 @@
+---
+## defaults file for f5_Device_Volume_Utilization
+item:
+  - show sys version

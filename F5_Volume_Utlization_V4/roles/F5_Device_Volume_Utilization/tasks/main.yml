@@ -1,0 +1,24 @@
+---
+# tasks file for f5_Device_Info_collect
+
+    - name: Find out playbooks path
+      shell: pwd
+      register: playbook_path_output
+    - name: "Generic Playbook"
+      F5_Volume_Utilization:
+        IP: "{{ ansible_host }}"
+        d_username: "{{ username }}"
+        d_password: "{{ password }}"
+        JumpServer: "{{ ansible_Jumpserver | default ('') }}"
+        j_username: "{{ j_username | default(username) }}"
+        j_password: "{{ j_username | default(password) }}"
+        path: "{{ playbook_path_output.stdout }}"
+      register: output
+      #ignore_errors: True
+#      no_log: False
+    - debug:
+         msg: "{{ output.meta }}"
+      when: output is not changed
+    - fail:
+         msg: "{{ output.meta }}"
+      when: output is changed
