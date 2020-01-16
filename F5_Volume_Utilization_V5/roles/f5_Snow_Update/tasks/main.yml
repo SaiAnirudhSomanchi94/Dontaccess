@@ -17,7 +17,7 @@
   snow_record:
     username: "{{snow_username}}"
     password: "{{snow_password}}"
-    instance: dev95938
+    instance: "{{snow_instance}}"
     state: present
     number: "{{incident_num}}"
     data:
@@ -32,7 +32,7 @@
   snow_record:
     username: "{{snow_username}}"
     password: "{{snow_password}}"
-    instance: dev95938
+    instance: "{{snow_instance}}"
     state: present
     number: "{{incident_num}}"
     data:
